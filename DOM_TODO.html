@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title> dom To Do List</title>
+        <script src="https://kit.fontawesome.com/76a388af8b.js" crossorigin="anonymous"></script>
+        <style>
+            #box{
+                background-color: rgb(197, 233, 221);
+                width: 300px;
+                height: 300px;
+                margin-top: 150px;
+                margin-left: 400px;
+                overflow-y: scroll;
+
+                }
+                #box::-webkit-scrollbar {
+                    display: none;
+
+
+                }
+                #ulist{
+                    background-color: red;
+                    width: auto;
+                    color: white;
+                    margin-bottom: 9px;
+                    border-radius: 5px;
+                    border:1px solid #6336ce;
+
+                    
+                    
+                }
+                .task{
+                    display: grid;
+                    grid-template-columns: 200px 50px ;
+                }
+                
+                
+
+        </style>
+    </head>
+    <body style="background-color: blueviolet;">
+       <div id="box">
+        &nbsp;
+        <input id="data" type="text" placeholder="Enter data" required style=" margin-top: 10px;"  >
+        &nbsp;&nbsp; 
+        <!-- <div class="responce"></div> -->
+        <button id="add" style="background-color: blue; color: white;border-radius: 5px; cursor: pointer;  ">ADD </button>
+        <!-- onclick=" todo(a)" -->
+        &nbsp;
+        <ul id="ulist" style="list-style: none; "></ul> 
+         
+    </div>
+        <!-- <i class="fa-sharp fa-solid fa-trash"></i> -->
+        
+        <script>
+           
+            let ul=document.getElementById("ulist")
+            let c=document.getElementById("data")
+            //const text=document.querySelector(".responce")
+
+            document.getElementById("add").onclick=function(){
+                if(data.value.length==0){
+                    
+                    alert(" enter input..!")
+                }
+                else{
+                    ulist.innerHTML=ulist.innerHTML+` 
+                    <div class="task">
+                        <span id=" work"> ${data.value} </span>
+                        <button class =" del"> <i class="fa-sharp fa-solid fa-trash"></i></button>
+                    
+                        </div>`
+
+                        let a=document.querySelectorAll(".del")
+                        for(i=0; i<a.length;i++){
+                            a[i].onclick = function(){
+                                this.parentNode.remove()
+                            }
+                        }
+                        c.value=" "
+
+                 
+                }
+                // let uservalue=c.value
+                // let pattern=/^[a-zA-Z0-9\@#$%^&*]+$/
+                // if(pattern.test(uservalue)){
+                //     alert(" input value successfully")
+                // }
+                // else{
+                //     alerta(" Invalid user input ")
+                // }
+            }
+
+           
+            
+            
+        </script>
+
+    </body>
+</html>
